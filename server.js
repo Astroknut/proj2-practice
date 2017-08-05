@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/proj2-practice');
 
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('views', './views');
 app.engine('ejs', require('ejs').renderFile);
@@ -42,6 +42,12 @@ app.use(routes);
 const db = require('./models');
 
 //***ROUTES***
+app.get('/api/beers', function(req,res){
+	db.Beer.find(function(err,beer){
+		if(err){console.log(err);}
+		res.json(beer);
+	});
+});
 
 //Server static files
 app.use(express.static('public'));

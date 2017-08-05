@@ -11,6 +11,7 @@ function authenticatedUser(req,res,next){
 	res.redirect('/');
 }
 
+
 router.route('/')
 	.get(staticsController.home);
 

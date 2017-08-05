@@ -1,4 +1,5 @@
 const passport = require('passport');
+const db = require('../models');
 
 //GET /signup
 function getSignup(req,res,next){
@@ -49,6 +50,7 @@ function getBeers(req,res,next){
 	res.render('beers.ejs');
 }
 
+
 module.exports = {
 	getLogin: getLogin,
 	postLogin: postLogin,
@@ -56,5 +58,5 @@ module.exports = {
 	postSignup: postSignup,
 	getLogout: getLogout,
 	secret: secret,
-	getBeers: getBeers
+	getBeers: getBeers,
 };
