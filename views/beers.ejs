@@ -1,6 +1,13 @@
 <% include ./partials/header.ejs %>
+<form method="POST" action="/search">
+	<div class="form-group">
+		<label for="type">Search by Type of Beer</label>
+		<input type="text" name="type" class="form-control" id="type" placeholder="ex. Lager">
+	</div>
+	<input id="submit" class='btn btn-default' type='submit'>
+</form>
+<br>
 <h2>We've selected this beer just for you!</h2>
-<ul id="beers">
-	
-</ul>
+<div id="beers">
+</div>
 <% include ./partials/userFoot.ejs %>
