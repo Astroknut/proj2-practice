@@ -42,14 +42,14 @@ app.use(routes);
 const db = require('./models');
 
 //***ROUTES***
-app.get('/api/beers', function(req,res){
-	db.Beer.find(function(err,beer){
-		if(err){console.log(err);}
-		res.json(beer);
-	});
+//
+app.get('/hello', function(req,res){
+	res.json({beers: req.user.beers});
 });
 
-//Server static files
+
+
+
 app.use(express.static('public'));
 
 

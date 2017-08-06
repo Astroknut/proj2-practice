@@ -32,4 +32,10 @@ router.route('/beers')
 router.route('/secret')
 	.get(authenticatedUser, usersController.secret);
 
+router.route('/api/beers')
+	.get(usersController.getList);
+
+router.route('/hello')
+	.get(usersController.getUserEmail);
+	
 module.exports = router;

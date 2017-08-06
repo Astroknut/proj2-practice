@@ -48,18 +48,12 @@ $(document).ready(function(){
 	$.ajax({
 		method: "GET",
 		url: "/api/beers",
-		success: handleSuccess,
-		error: handleError
 	});
 
-	function handleSuccess(json){
-		allBeers = json;
-		render();
-	}
-
-	function handleError(e){
-		console.log('oh no!');
-	}
+	$.ajax({
+		method: "GET",
+		url: "/hello"
+	});
 });
 
 $('#submit').on('click', search);

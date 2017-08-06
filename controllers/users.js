@@ -50,6 +50,18 @@ function getBeers(req,res,next){
 	res.render('beers.ejs');
 }
 
+function getList(req,res){
+	db.Beer.find(function(err,beer){
+		if(err){console.log(err);}
+		res.json(beer);
+	});
+}
+
+function getUserEmail(req,res){
+	res.json({email: req.user.local.email});
+}
+
+
 
 module.exports = {
 	getLogin: getLogin,
@@ -59,4 +71,6 @@ module.exports = {
 	getLogout: getLogout,
 	secret: secret,
 	getBeers: getBeers,
+	getList: getList,
+	getUserEmail: getUserEmail
 };
