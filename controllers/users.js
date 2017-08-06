@@ -1,6 +1,7 @@
 const passport = require('passport');
 const db = require('../models');
 
+
 //GET /signup
 function getSignup(req,res,next){
 	res.render('signup.ejs',{message: req.flash('signupMessage')});
@@ -58,9 +59,27 @@ function getList(req,res){
 }
 
 function getUserEmail(req,res){
-	res.json({email: req.user.local.email});
+	var user = req.user;
+	res.json(user);
+
 }
 
+function addBeer(req,res){
+	var userBeers = req.user.beers;
+	var newBeer = new db.Beer({
+		name: req.body.name,
+		abv: req.body.abv,
+		tagline: req.body.tagline,
+		description: req.body.description,
+		food_pairing: [req.body.food_pairing],
+		image: req.body.image_url
+	});
+	console.log(newBeer);
+	userBeers.push(newBeer);
+	req.user.save();
+	console.log(userBeers);
+	res.json(newBeer);
+}
 
 
 module.exports = {
@@ -72,5 +91,6 @@ module.exports = {
 	secret: secret,
 	getBeers: getBeers,
 	getList: getList,
-	getUserEmail: getUserEmail
+	getUserEmail: getUserEmail,
+	addBeer: addBeer
 };

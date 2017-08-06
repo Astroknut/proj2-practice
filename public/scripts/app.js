@@ -12,7 +12,12 @@ const randomBeer = function(){
 			randomSelect = data[0];
 			$('#beers').append("<div id='beerList'><ul><li>" + randomSelect.name + "</li><li>" + "ABV%:" + randomSelect.abv + "</li><li>" + randomSelect.tagline + "</li><li>" + randomSelect.description + "</li><li>Enjoy with: <ul><li>" + randomSelect.food_pairing[0] + "</li><li>" + randomSelect.food_pairing[1] +"</li><li>" +randomSelect.food_pairing[2] + "</li></ul></li><ul><br><img src=" + randomSelect.image_url + "><br><button id='save' class='btn btn-success' type='button'>Save Beer</button></div>");
 			const saveBeer = function(){
-				console.log(randomSelect.name);
+				$.ajax({
+					type: "POST",
+					url: "/beers",
+					dataType: 'json',
+					data: randomSelect
+				});
 			};
 			$('#save').on('click', saveBeer);	
 			}
@@ -33,7 +38,12 @@ const search = function(e){
 			console.log(selectBeer);
 			$('#beers').append("<div id='beerList'><ul><li>" + selectBeer.name + "</li><li>ABV%:" + selectBeer.abv + "</li><li>" + selectBeer.tagline + "</li><li>" + selectBeer.description + "</li><li>Enjoy with: <ul><li>" + selectBeer.food_pairing[0] +"</li><li>" + selectBeer.food_pairing[1] + "</li><li>" + selectBeer.food_pairing[2] + "</li></ul></li></ul><br><img src=" + selectBeer.image_url + "><br><button id='save' class='btn btn-success' type='button'>Save Beer</button></div>");
 			const saveBeer = function(){
-				console.log(JSON.stringify(selectBeer));
+				$.ajax({
+					type: "POST",
+					url: "/beers",
+					dataType: 'json',
+					data: selectBeer
+				});
 			};
 
 			$('button').on('click', saveBeer);

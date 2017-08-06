@@ -43,9 +43,7 @@ const db = require('./models');
 
 //***ROUTES***
 //
-app.get('/hello', function(req,res){
-	res.json({beers: req.user.beers});
-});
+
 
 
 

@@ -27,15 +27,17 @@ router.route('/logout')
 	.get(usersController.getLogout);
 
 router.route('/beers')
-	.get(authenticatedUser, usersController.getBeers);
+	.get(authenticatedUser, usersController.getBeers)
+	.post(usersController.addBeer);
 
 router.route('/secret')
 	.get(authenticatedUser, usersController.secret);
 
 router.route('/api/beers')
 	.get(usersController.getList);
+	
 
 router.route('/hello')
 	.get(usersController.getUserEmail);
-	
+
 module.exports = router;
