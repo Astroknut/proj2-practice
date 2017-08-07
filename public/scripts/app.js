@@ -24,6 +24,26 @@ const randomBeer = function(){
 	});
 };
 
+const userList = function(){
+	$.ajax({
+		type: "GET",
+		url: '/myBeers',
+		dataType: 'json',
+		success: function(data){
+			console.log('Success');
+			data.forEach(function(el){
+				$('#myBeers').append("<div id='beerList'><ul><li>" + el.name + "</li><li>" + "ABV%:" + el.abv + "</li><li>" + el.tagline + "</li><li>" + el.description + "</li><li>Enjoy with: <ul><li>" + el.food_pairing[0] + "</li><br>" + el.food_pairing[1] + "</li><br>" + el.food_pairing[2] + "</li></ul></li><ul><br><img src=" + el.image_url + "><br><button id='delete' class='btn btn-danger' type='button'>Delete Beer</button><br>");
+				const deleteBeer = function(e){
+					console.log('delete button');
+				};
+				$('#delete').on('click', deleteBeer);	
+		});
+	}
+});
+};
+
+
+
 
 const search = function(e){
 	e.preventDefault();
@@ -54,20 +74,10 @@ const search = function(e){
 	beersList();
 };
 
-$(document).ready(function(){
-	$.ajax({
-		method: "GET",
-		url: "/api/beers",
-	});
-
-	$.ajax({
-		method: "GET",
-		url: "/hello"
-	});
-});
-
 $('#submit').on('click', search);
 
 
-
-randomBeer();
+$(document).ready(function(){
+	randomBeer();
+	userList();
+});

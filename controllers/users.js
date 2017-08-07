@@ -27,7 +27,7 @@ function getLogin(req,res,next){
 //POST /login
 function postLogin(req,res,next){
 	let loginProperty = passport.authenticate('local-login', {
-		successRedirect: '/beers',
+		successRedirect: '/myBeers',
 		succesFlash: 'Welcome!',
 		failureRedirect: '/login',
 		failureFlash: true
@@ -47,23 +47,19 @@ function secret(req,res){
 	res.send('Welcome to the secret page');
 }
 
+//Shows random beer before search
 function getBeers(req,res,next){
 	res.render('beers.ejs');
 }
 
+//Returns beers JSON for current user
 function getList(req,res){
-	db.Beer.find(function(err,beer){
-		if(err){console.log(err);}
-		res.json(beer);
-	});
+	var thisUser = req.user;
+	console.log(thisUser);
+	res.json(thisUser.beers);
 }
 
-function getUserEmail(req,res){
-	var user = req.user;
-	res.json(user);
-
-}
-
+//Allows user to save beer to db
 function addBeer(req,res){
 	var userBeers = req.user.beers;
 	var newBeer = new db.Beer({
@@ -74,10 +70,8 @@ function addBeer(req,res){
 		food_pairing: [req.body.food_pairing],
 		image: req.body.image_url
 	});
-	console.log(newBeer);
 	userBeers.push(newBeer);
 	req.user.save();
-	console.log(userBeers);
 	res.json(newBeer);
 }
 
@@ -91,6 +85,5 @@ module.exports = {
 	secret: secret,
 	getBeers: getBeers,
 	getList: getList,
-	getUserEmail: getUserEmail,
 	addBeer: addBeer
 };
