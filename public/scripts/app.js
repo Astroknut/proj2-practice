@@ -21,6 +21,7 @@ const randomBeer = function(){
 					dataType: 'json',
 					data: randomSelect
 				});
+				location.reload();
 			};
 			$('#save').on('click', saveBeer);	
 			}
@@ -47,6 +48,7 @@ const search = function(e){
 					dataType: 'json',
 					data: selectBeer
 				});
+				location.reload();
 			};
 
 			$('button').on('click', saveBeer);
