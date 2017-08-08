@@ -37,9 +37,9 @@ router.route('/myBeers')
 	.get(usersController.getList);
 
 router.route('/myBeers/:id')
-	.get(usersController.getMyBeer)
+	.get(usersController.deleteBeer)
 	.patch(usersController.updateBeer)
-	.delete(usersController.deleteBeer);
+	
 
 
 

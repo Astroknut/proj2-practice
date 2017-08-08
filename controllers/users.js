@@ -58,7 +58,19 @@ function getList(req,res){
 	res.render('myBeers.ejs', {userBeers: userBeers});
 }
 
+//
 function getMyBeer(req,res){
+
+}
+
+function updateBeer(req,res){
+	
+	res.send('update');
+}
+
+//Removes beer from saved beers
+function deleteBeer(req,res){
+
 	console.log('Yo route is up');
 	var id = req.params.id;
 	console.log(id);
@@ -74,17 +86,6 @@ function getMyBeer(req,res){
 			return res.redirect('../myBeers');
 		}
 	);
-}
-
-function updateBeer(req,res){
-	
-	res.send('update');
-}
-
-//Removes beer from saved beers
-function deleteBeer(req,res){
-
-res.send('delete route');
 
 	
 }
