@@ -1,3 +1,4 @@
+const chai = require('chai');
 const expect = require('chai').expect;
 const request = require('request');
 const server = require('../server.js');
