@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
-mongoose.connect("mongodb://localhost/proj2-practice");
+mongoose.connect( process.env.MONGODB_URI || 
+                  process.env.MONGOLAB_URI || 
+                  process.env.MONGOHQ_URL || 
+                  "mongodb://localhost/personal-api");
 
 
 module.exports.User = require('./user.js');

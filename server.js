@@ -10,7 +10,10 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 
-mongoose.connect('mongodb://localhost/proj2-practice');
+mongoose.connect( process.env.MONGODB_URI || 
+                  process.env.MONGOLAB_URI || 
+                  process.env.MONGOHQ_URL || 
+                  "mongodb://localhost/personal-api");
 
 app.use(morgan('dev'));
 app.use(cookieParser());
