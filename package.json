@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.1.0",
-    "mocha": "^3.4.2"
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -29,6 +29,7 @@
     "morgan": "^1.8.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "request": "^2.81.0"
   }
 }
