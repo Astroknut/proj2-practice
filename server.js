@@ -44,7 +44,9 @@ const db = require('./models');
 //***ROUTES***
 //
 
-
+app.delete('/myBeers', function(req,res){
+	res.write('Route');
+});
 
 
 

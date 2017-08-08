@@ -52,11 +52,41 @@ function getBeers(req,res,next){
 	res.render('beers.ejs');
 }
 
-//Returns beers JSON for current user
+//Displays users saved beers
 function getList(req,res){
-	var thisUser = req.user;
-	console.log(thisUser);
-	res.json(thisUser.beers);
+	var userBeers = req.user.beers;
+	res.render('myBeers.ejs', {userBeers: userBeers});
+}
+
+function getMyBeer(req,res){
+	console.log('Yo route is up');
+	var id = req.params.id;
+	console.log(id);
+	var userId = req.user._id;
+	console.log(userId);
+
+	db.User.findOneAndUpdate(
+		{_id: userId}, 
+		{$pull: {beers: {_id: id}}},
+		{upsert: true},
+		function(err,user){
+			if(err) res.send(err);
+			return res.redirect('../myBeers');
+		}
+	);
+}
+
+function updateBeer(req,res){
+	
+	res.send('update');
+}
+
+//Removes beer from saved beers
+function deleteBeer(req,res){
+
+res.send('delete route');
+
+	
 }
 
 //Allows user to save beer to db
@@ -85,5 +115,8 @@ module.exports = {
 	secret: secret,
 	getBeers: getBeers,
 	getList: getList,
-	addBeer: addBeer
+	deleteBeer: deleteBeer,
+	addBeer: addBeer,
+	getMyBeer: getMyBeer,
+	updateBeer: updateBeer
 };

@@ -1,5 +1,18 @@
 <% include ./partials/header.ejs %>
-<h2>Here's a list of your saved beers!</h2>
+<h1>Here's a list of your saved beers!</h1>
 <div id="myBeers">
+	<% for(var i=0; i<userBeers.length; i++) { %>
+		<h2><%= userBeers[i].name %></h2>
+		<ul>
+			<li><b>ABV: </b> <%= userBeers[i].abv %> % </li>
+			<li><b>Description: </b> <%= userBeers[i].description %></li>
+			<li><b>Pair with: </b> <%= userBeers[i].food_pairing %></li>
+		</ul>
+		<br>
+		<img src="<%= userBeers[i].image %>">
+		<br>
+		<button class="btn btn-warning"><a href="/myBeers/<%= userBeers[i]._id %>">Edit/Delete</a></button>
+		<br>
+	<% } %>
 </div>
 <% include ./partials/userFoot.ejs %>

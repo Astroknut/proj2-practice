@@ -6,7 +6,7 @@ var Beer = mongoose.Schema({
 	description: String,
 	tagline: String,
 	image: String,
-	foods_pairing: [ String ]
+	food_pairing: [ String ]
 });
 
 module.exports = mongoose.model('Beer', Beer);

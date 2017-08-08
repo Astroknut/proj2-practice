@@ -35,6 +35,17 @@ router.route('/secret')
 
 router.route('/myBeers')
 	.get(usersController.getList);
+
+router.route('/myBeers/:id')
+	.get(usersController.getMyBeer)
+	.patch(usersController.updateBeer)
+	.delete(usersController.deleteBeer);
+
+
+
+
 	
+
+
 
 module.exports = router;
