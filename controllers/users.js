@@ -58,17 +58,19 @@ function getList(req,res){
 	res.render('myBeers.ejs', {userBeers: userBeers});
 }
 
-//
+//Gets one beer by ID
 function getMyBeer(req,res){
+	res.send('get my beer');
 
 }
 
+//Updates notes for beer
 function updateBeer(req,res){
 	
 	res.send('update');
 }
 
-//Removes beer from saved beers
+//Removes beer from User.beers
 function deleteBeer(req,res){
 
 	console.log('Yo route is up');

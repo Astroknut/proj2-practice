@@ -1,8 +1,11 @@
 const apiUrl = 'https://api.punkapi.com/v2/beers';
+
+//Generates random Number to select one beer on Search
 var randomNum = function(min, max){
 	return Math.floor(Math.random() * (max-min+1)) + min;
 };
 
+//AJAX call to API for random beer
 const randomBeer = function(){
 	$.ajax({
 		type: "GET",
@@ -24,6 +27,7 @@ const randomBeer = function(){
 	});
 };
 
+//AJAX call to API to search for beer based on type; Returns random beer from API
 const search = function(e){
 	e.preventDefault();
 	$('#beerList').remove();
