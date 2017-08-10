@@ -2,10 +2,20 @@ Trello Board: https://trello.com/b/qMupHAhQ/project-2
 
 Project 2: Hoppy Hour
 
-Wireframes
+Wireframes:
+Signup Page
 ![Alt text](./img/signup.png?raw=true "Signup Page")
+
+
+Login Page
 ![Alt text](./img/login.png?raw=true "Login Page")
+
+
+User Home Page
 ![Alt text](./img/myBeers.png?raw=true "User Home Page")
+
+
+Search Page
 ![Alt text](./img/search.png?raw=true "Search Page")
 
 If you're one of the tens of people who just LOVE Brewdog Brewery's ridiculously large beer selection, this is the app for you. 
