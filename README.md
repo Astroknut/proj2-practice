@@ -2,6 +2,12 @@ Trello Board: https://trello.com/b/qMupHAhQ/project-2
 
 Project 2: Hoppy Hour
 
+Wireframes
+![Alt text](./img/signup.png?raw=true "Signup Page")
+![Alt text](./img/login.png?raw=true "Login Page")
+![Alt text](./img/myBeers.png?raw=true "User Home Page")
+![Alt text](./img/search.png?raw=true "Search Page")
+
 If you're one of the tens of people who just LOVE Brewdog Brewery's ridiculously large beer selection, this is the app for you. 
 
 Have you ever found yourself daydreaming about a crisp, refreshing pint of Vagabond Pilsner? Then you have probably thought to yourself: "I really wish there was some way for me to make a list of all of my favorite Brewdog beers, so I can read all about them whenever I want!"
