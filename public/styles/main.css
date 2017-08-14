@@ -5,29 +5,26 @@ body {
 	background-image: linear-gradient(90deg, #5c258d, #4389a2)
 }
 
+/*Transparent Nav Bar*/
 #navBar {
 	background-color: transparent;
 	border-color: transparent;
 }
 
+/*Resize Logo Image*/
 .logo {
   max-height: 40px;
+  min-height: 20px;
   max-width: 15%;
-  overflow: visible;
   width: auto;
+  overflow: visible;
 }
 
 #hoppy {
 	font-size: 30px;
 }
 
-.forms {
-    font-family: 'Abril Fatface';
-    font-size: 20px;
-    color: #000000;
-}
-
-
+/*Flashing Text Animation*/
 .banner{
 	text-align: center;
 	font-family: 'Abril Fatface';

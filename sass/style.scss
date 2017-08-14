@@ -1,0 +1,19 @@
+//Google Font Import
+@import(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+//Variables
+$formColor: #e5ae86;
+$font-stack: 'Abril Fatface';
+
+
+.forms {
+    font-family: 'Abril Fatface';
+    font-size: 20px;
+    color: #e5ae86;
+}
+
+#login #signup {
+	font-family: $font-stack;
+	color: $formColor;
+	
+}
