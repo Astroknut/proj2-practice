@@ -1,6 +1,10 @@
 const passport = require('passport');
 const db = require('../models');
 
+//GET /
+function getHome(req,res,next){
+	res.render('index.ejs');
+}
 
 //GET /signup
 function getSignup(req,res,next){
@@ -110,6 +114,7 @@ function addBeer(req,res){
 
 
 module.exports = {
+	getHome: getHome,
 	getLogin: getLogin,
 	postLogin: postLogin,
 	getSignup: getSignup,

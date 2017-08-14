@@ -1,0 +1,92 @@
+@import(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+/*Background Color Gradient*/
+body {
+	background-image: linear-gradient(90deg, #5c258d, #4389a2)
+}
+
+#navBar {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.logo {
+  max-height: 40px;
+  max-width: 15%;
+  overflow: visible;
+  width: auto;
+}
+
+#hoppy {
+	font-size: 30px;
+}
+
+.forms {
+    font-family: 'Abril Fatface';
+    font-size: 20px;
+    color: #000000;
+}
+
+
+.banner{
+	text-align: center;
+	font-family: 'Abril Fatface';
+	-webkit-animation: color-change 1.5s infinite;
+    -moz-animation: color-change 1.5s infinite;
+    -o-animation: color-change 1.5s infinite;
+    -ms-animation: color-change 1.5s infinite;
+    animation: color-change 1.5s infinite;
+}
+@-webkit-keyframes color-change {
+    0% { color: #f7ff00;}
+    10% {color: #f1d721;}
+    20% { color: #ecaf42;}
+    30% { color: #e68662;}
+    40% {color: #e15e83;}
+    50% { color: #db36a4;}
+    60% {color: #e15e83;}
+    70% {color: #e68662;}
+    80% {color: #ecaf42;}
+    90% {color: #f1d721;}
+    100% {color: #f7ff00;}
+}
+@-moz-keyframes color-change {
+    0% { color: #f7ff00;}
+    10% {color: #f1d721;}
+    20% { color: #ecaf42;}
+    30% { color: #e68662;}
+    40% {color: #e15e83;}
+    50% { color: #db36a4;}
+    60% {color: #e15e83;}
+    70% {color: #e68662;}
+    80% {color: #ecaf42;}
+    90% {color: #f1d721;}
+    100% {color: #f7ff00;}
+}
+
+@-o-keyframes color-change {
+    0% { color: #f7ff00;}
+    10% {color: #f1d721;}
+    20% { color: #ecaf42;}
+    30% { color: #e68662;}
+    40% {color: #e15e83;}
+    50% { color: #db36a4;}
+    60% {color: #e15e83;}
+    70% {color: #e68662;}
+    80% {color: #ecaf42;}
+    90% {color: #f1d721;}
+    100% {color: #f7ff00;}
+}
+@keyframes color-change {
+    0% { color: #f7ff00;}
+    10% {color: #f1d721;}
+    20% { color: #ecaf42;}
+    30% { color: #e68662;}
+    40% {color: #e15e83;}
+    50% { color: #db36a4;}
+    60% {color: #e15e83;}
+    70% {color: #e68662;}
+    80% {color: #ecaf42;}
+    90% {color: #f1d721;}
+    100% {color: #f7ff00;}
+}

@@ -1,12 +1,11 @@
 <% include ./partials/header.ejs %>
-
 <% if(message.length > 0) { %>
 	<div class='alert alert-danger'><%= message %></div>
 <% } %>
 
 <h2>Signup</h2>
 
-<form method='post' action='/signup'>
+<form class="col-md-4 forms"method='post' action='/signup'>
 	<div class="form-group">
 		<label for='email'>Email</label>
 		<input class='form-control' type='text' name='email' id='email'>

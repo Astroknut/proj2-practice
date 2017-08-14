@@ -1,16 +1,18 @@
 <% include ./partials/header.ejs %>
-<h1>Edit or Delete <%= beer.name %></h1>
-<fieldset>
-	<form action="/myBeers/<%= beer.id %>?_method=PATCH" method="POST">
-		<div>
-			<input name="name" placeholder="<%= beer.name %>"/>
-		</div>
-	</form>
 
-	<form action="/myBeers/<%= beer.id %>?_method=DELETE" method="POST">
-		<div>
-			<input class="btn btn-danger" type="submit" value="Delete <%= beer.name %>?">
-		</div>
-	</form>
-</fieldset>
+<h1>Edit or Delete <%= beer.name %></h1>
+	<fieldset>
+		<form action="/myBeers/<%= beer.id %>?_method=PATCH" method="POST">
+			<div>
+				<input name="name" placeholder="<%= beer.name %>"/>
+			</div>
+		</form>
+
+		<form action="/myBeers/<%= beer.id %>?_method=DELETE" method="POST">
+			<div>
+				<input class="btn btn-danger" type="submit" value="Delete <%= beer.name %>?">
+			</div>
+		</form>
+	</fieldset>
+
 <% include ./partials/userFoot.ejs %>

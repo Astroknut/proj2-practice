@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const passport = require('passport');
 const usersController = require('../controllers/users');
-const staticsController = require('../controllers/static');
 
 function authenticatedUser(req,res,next){
 	if(req.isAuthenticated()) return next();
@@ -13,7 +12,7 @@ function authenticatedUser(req,res,next){
 
 //Welcome Page
 router.route('/')
-	.get(staticsController.home);
+	.get(usersController.getHome);
 
 //Signup Page
 router.route('/signup')
