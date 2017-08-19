@@ -11,6 +11,11 @@ body {
 	border-color: transparent;
 }
 
+#navBarMenu {
+    font-family: "Abril Fatface";
+    font-size: 20px;
+}
+
 /*Resize Logo Image*/
 .logo {
   max-height: 40px;
